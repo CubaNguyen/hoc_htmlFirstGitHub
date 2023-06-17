@@ -1,0 +1,99 @@
+     // biến
+     $boderColor: rgb(166, 166, 49);
+     $bgColor: rgb(208, 193, 193);
+     $textColor: rgb(246, 19, 19);
+     $normalSize: 1.1 rem;
+     $linkBgColor: #0c5f8b;
+     $linkBgHover: rgb(112, 116, 87);
+     $linkColorHover: rgb(223, 206, 188);
+     
+      body{
+         background-color:$bgColor ;
+      }
+     h3 {
+         font-size: 30px;
+         border: 4px solid $boderColor;
+     }
+      // nested lồg nhau
+
+     
+     nav{
+         ul {
+             margin: 0px;
+             padding : 0px;
+             list-style-type: none;
+     
+             li {
+                 display: inline-block;
+     
+             }
+             a {
+                 display: block;
+                 text-decoration: none;
+                 color: $textColor;
+                 font-size: $normalSize;
+                 padding: 15px;
+                 background: $linkBgColor ;
+     
+                 &:hover {
+                     background: $linkBgHover;
+                     color: $linkColorHover;
+                 }
+             }
+         }
+     }
+     // mixin như function
+     @mixin haha {
+         text-transform: uppercase;
+         font-size: 19px;
+         border: 5px solid $boderColor;
+          // hover trỏ chuột vô thì thay đổi
+         &:hover {
+             cursor: pointer;
+             color: red;
+             background: black;
+         }
+     }
+         // gọi function
+     .cc {
+         @include haha;
+     }
+     .cccc {
+         @include haha;
+     }
+     //extend kế thừa
+     .register {
+         color: red;
+         background: black;
+         font-size: 30px;
+         border: none;
+     
+     }
+ .content{
+         max-width: 500px;
+         @extend .register;
+         margin-top: 10px;
+     }
+     
+     // if else tương tự ( cú pháp @if (...  ){...}   )
+     
+     // for
+     
+@for $i from 1 through 5 {
+         .slider-#{$i} {
+             background: rgb(21, 160, 214);
+             border: 5px solid rgb(219, 46, 238);
+             color:rgb(153, 173, 25);
+             padding: 10px;
+             margin-bottom: 20px;
+     
+         }
+     }
+     
+.con1{
+         color: rgb(15, 187, 239);
+     }
+     .cha1 {
+         @extend .con1;
+     }
+     
